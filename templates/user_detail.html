@@ -7,4 +7,12 @@
 <img src="{{ user.image_url }}" alt="{{ user.first_name }}" class="img-thumbnail">
 <a href="/users/{{ user.id }}/edit" class="btn btn-primary">Edit</a>
 <a href="/users/{{ user.id }}/delete" class="btn btn-danger">Delete</a>
+
+<h2>Posts</h2>
+<ul>
+    {% for post in user.posts %}
+    <li><a href="/posts/{{ post.id }}">{{ post.title }}</a></li>
+    {% endfor %}
+</ul>
+<a href="/users/{{ user.id }}/posts/new" class="btn btn-success">Add Post</a>
 {% endblock %}
